@@ -4,17 +4,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 
 
-
 @NgModule({
   declarations: [],
   imports: [
     NgbModule,
     CommonModule,
-    BrowserModule
+    BrowserModule,
+
   ],
   exports: [
-    NgModule,
+    CommonModule,
+    NgbModule,
     BrowserModule,
+
   ]
 })
+
 export class CoreModule { }
