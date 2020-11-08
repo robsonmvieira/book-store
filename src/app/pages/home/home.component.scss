@@ -61,7 +61,7 @@ img {
       margin-top: 60px;
 
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
       justify-content: space-between;
 
       & > .recommendeds {
@@ -87,7 +87,7 @@ img {
           display: flex;
           justify-content: space-between;
 
-          & > img {
+          & > .img {
             width: 100%;
             display: block;
             max-width: 100%;
@@ -116,7 +116,7 @@ img {
           display: flex;
           justify-content: space-between;
 
-          & > img {
+          & > .img {
             width: 100%;
             display: block;
             max-width: 100%;
@@ -203,7 +203,7 @@ img {
           width: 100%;
           max-width: 100%;
 
-          & > img {
+          & > .img {
             width: 100%;
             display: block;
             max-width: 100%;
@@ -232,7 +232,7 @@ img {
           display: flex;
           justify-content: space-between;
 
-          & > img {
+          & > .img {
             width: 100%;
             display: block;
             max-width: 100%;
