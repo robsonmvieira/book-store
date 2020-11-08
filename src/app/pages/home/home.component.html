@@ -1,1 +1,124 @@
-<p>home works!</p>
+<app-public-menu></app-public-menu>
+<!-- <div class="container"> -->
+  <div class="wapper">
+    <div class="principal-caroussel">
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide *ngFor="let item of images">
+          <div class="picsum-img-wrapper">
+            <img [src]="item" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <!-- <div class="side-caroussel">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img src="../../../assets/img/side-caroussel/01.jpg" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div> -->
+    <div class="skills">
+      <div class="skill">
+        <div class="img">
+          <img src="../../../assets/icons/fast.svg" alt="" srcset="">
+        </div>
+        <div class="container-title">
+          <h5 class="title">
+            Rápida entrega
+          </h5>
+          <p class="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, tempora!
+          </p>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="img">
+          <img src="../../../assets/icons/quality.svg" alt="" srcset="">
+        </div>
+        <div class="container-title">
+          <h5 class="title">
+            Devolução garantida
+          </h5>
+          <p class="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, tempora!
+          </p>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="img">
+          <img src="../../../assets/icons/verified.svg" alt="" srcset="">
+        </div>
+        <div class="container-title">
+          <h5 class="title">
+            Pagamento seguro
+          </h5>
+          <p class="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, tempora!
+          </p>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="img">
+          <img src="../../../assets/icons/like.svg" alt="" srcset="">
+        </div>
+        <div class="container-title">
+          <h5 class="title">
+            Melhor qualidade do Mercado
+          </h5>
+          <p class="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam, tempora!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="offers">
+      <div class="recommendeds">
+        <div class='container-title'>
+          <!-- https://picsum.photos/id/${n}/2000/500 -->
+          <h5 class="title">
+            Recomendados para você
+          </h5>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sunt atque reiciendis beatae nihil, ducimus consectetur expedita autem magnam nulla.
+          </p>
+        </div>
+        <div class="books">
+          <img src="https://picsum.photos/id/5/150/150" alt="" srcset="">
+          <img src="https://picsum.photos/id/6/150/150" alt="" srcset="">
+          <img src="https://picsum.photos/id/4/150/150" alt="" srcset="">
+          <img src="https://picsum.photos/id/99/150/150" alt="" srcset="">
+        </div>
+      </div>
+
+      <div class="best-seller-2020">
+        <div class='container-title'>
+          <!-- https://picsum.photos/id/${n}/2000/500 -->
+          <h5 class="title">
+            Recomendados para você
+          </h5>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sunt atque reiciendis beatae nihil, ducimus consectetur expedita autem magnam nulla.
+          </p>
+        </div>
+        <div class="books">
+          <img src="https://picsum.photos/id/5/15/15" alt="" srcset="">
+          <img src="https://picsum.photos/id/6/15/15" alt="" srcset="">
+          <img src="https://picsum.photos/id/4/15/15" alt="" srcset="">
+          <img src="https://picsum.photos/id/99/15/15" alt="" srcset="">
+        </div>
+      </div>
+    </section>
+  </div>
+<!-- </div> -->
+

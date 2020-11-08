@@ -1,0 +1,247 @@
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+.wapper {
+
+  @media (max-width: 480px) {
+    // background: red;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    .principal-caroussel {
+      margin-bottom: 20px;
+    }
+  }
+  @media (min-width: 481px) and (max-width: 1200px) {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .principal-caroussel {
+      margin: auto;
+      width: 100%;
+      // margin-right: 20px;
+    }
+    & > .skills {
+      width: 100%;
+      margin-top: 60px;
+
+      display: flex;
+      justify-content: space-between;
+
+      & > .skill {
+        display: flex;
+        & > .img {
+          margin-right: 10px;
+        }
+        & > .container-title {
+          display: flex;
+          flex-direction: column;
+
+          & > .title {
+            color: #3F4256;
+            font-weight: bold;
+          }
+          & > .description {
+            font-size: .9em;
+          }
+        }
+      }
+    }
+
+    & > .offers {
+      width: 100%;
+      margin-top: 60px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > .recommendeds {
+        display: flex;
+        flex-direction: column;
+        background: rgb(143, 135, 199, .3);
+        padding: 20px;
+        margin-right: 20px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+
+        & > .container-title {
+          display: flex;
+          flex-direction: column;
+
+          & > .title, .description {
+            margin-left: 20px;
+          }
+
+        }
+
+        & > .books {
+          display: flex;
+          justify-content: space-between;
+
+          & > img {
+            width: 100%;
+            display: block;
+            max-width: 100%;
+            margin: 10px;
+          }
+        }
+      }
+      & > .best-seller-2020 {
+        display: flex;
+        flex-direction: column;
+        background: rgba(230, 220, 176, .3);
+        padding: 20px;
+        margin-right: 20px;
+        border-radius: 4px;
+
+        & > .container-title {
+          display: flex;
+          flex-direction: column;
+
+          & > .title, .description {
+            margin-left: 20px;
+          }
+        }
+
+        & > .books {
+          display: flex;
+          justify-content: space-between;
+
+          & > img {
+            width: 100%;
+            display: block;
+            max-width: 100%;
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1201px) {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .principal-caroussel {
+      margin: auto;
+      width: 100%;
+      // margin-right: 20px;
+    }
+    & > .skills {
+      width: 100%;
+      margin-top: 60px;
+
+      display: flex;
+      justify-content: space-between;
+
+      & > .skill {
+        display: flex;
+        & > .img {
+          margin-right: 10px;
+        }
+        & > .container-title {
+          display: flex;
+          flex-direction: column;
+
+          & > .title {
+            color: #3F4256;
+            font-weight: bold;
+          }
+          & > .description {
+            font-size: .9em;
+          }
+        }
+      }
+    }
+
+    & > .offers {
+      width: 100%;
+      margin-top: 60px;
+
+      display: flex;
+      // flex-direction: column;
+      justify-content: space-between;
+
+      & > .recommendeds {
+        display: flex;
+        // width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        background: rgb(143, 135, 199, .3);
+        padding: 20px;
+        margin-right: 20px;
+        border-radius: 4px;
+        // margin-bottom: 10px;
+
+        & > .container-title {
+          display: flex;
+          flex-direction: column;
+
+          & > .title, .description {
+            margin-left: 20px;
+          }
+
+        }
+
+        & > .books {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          max-width: 100%;
+
+          & > img {
+            width: 100%;
+            display: block;
+            max-width: 100%;
+            margin: 10px;
+          }
+        }
+      }
+      & > .best-seller-2020 {
+        display: flex;
+        flex-direction: column;
+        background: rgba(230, 220, 176, .3);
+        padding: 20px;
+        margin-right: 20px;
+        border-radius: 4px;
+
+        & > .container-title {
+          display: flex;
+          flex-direction: column;
+
+          & > .title, .description {
+            margin-left: 20px;
+          }
+        }
+
+        & > .books {
+          display: flex;
+          justify-content: space-between;
+
+          & > img {
+            width: 100%;
+            display: block;
+            max-width: 100%;
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
+  // display: flex;
+  // justify-content: space-between;
+}
