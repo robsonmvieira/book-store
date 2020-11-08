@@ -1,16 +1,16 @@
 img {
-  display: block;
   width: 100%;
+  display: block;
   max-width: 100%;
 }
 .wapper {
 
   @media (max-width: 480px) {
-    // background: red;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
     .principal-caroussel {
       margin-bottom: 20px;
     }
@@ -61,17 +61,17 @@ img {
       margin-top: 60px;
 
       display: flex;
-      // flex-direction: column;
       justify-content: space-between;
 
       & > .recommendeds {
-        display: flex;
-        flex-direction: column;
-        background: rgb(143, 135, 199, .3);
         padding: 20px;
         margin-right: 20px;
         border-radius: 4px;
         margin-bottom: 10px;
+        background: rgb(143, 135, 199, .3);
+
+        display: flex;
+        flex-direction: column;
 
         & > .container-title {
           display: flex;
@@ -89,19 +89,20 @@ img {
 
           & > .img {
             width: 100%;
+            margin: 10px;
             display: block;
             max-width: 100%;
-            margin: 10px;
           }
         }
       }
       & > .best-seller-2020 {
-        display: flex;
-        flex-direction: column;
-        background: rgba(230, 220, 176, .3);
         padding: 20px;
         margin-right: 20px;
         border-radius: 4px;
+        background: rgba(230, 220, 176, .3);
+
+        display: flex;
+        flex-direction: column;
 
         & > .container-title {
           display: flex;
@@ -118,9 +119,9 @@ img {
 
           & > .img {
             width: 100%;
+            margin: 10px;
             display: block;
             max-width: 100%;
-            margin: 10px;
           }
         }
       }
@@ -173,18 +174,17 @@ img {
       margin-top: 60px;
 
       display: flex;
-      // flex-direction: column;
       justify-content: space-between;
 
       & > .recommendeds {
-        display: flex;
-        // width: 100%;
-        max-width: 100%;
-        flex-direction: column;
-        background: rgb(143, 135, 199, .3);
         padding: 20px;
+        max-width: 100%;
         margin-right: 20px;
         border-radius: 4px;
+        background: rgb(143, 135, 199, .3);
+
+        display: flex;
+        flex-direction: column;
         // margin-bottom: 10px;
 
         & > .container-title {
@@ -198,26 +198,26 @@ img {
         }
 
         & > .books {
-          display: flex;
-          justify-content: space-between;
           width: 100%;
+          display: flex;
           max-width: 100%;
+          justify-content: space-between;
 
           & > .img {
             width: 100%;
+            margin: 10px;
             display: block;
             max-width: 100%;
-            margin: 10px;
           }
         }
       }
       & > .best-seller-2020 {
         display: flex;
+        padding: 20px;
+        border-radius: 4px;
+        margin-right: 20px;
         flex-direction: column;
         background: rgba(230, 220, 176, .3);
-        padding: 20px;
-        margin-right: 20px;
-        border-radius: 4px;
 
         & > .container-title {
           display: flex;
@@ -234,9 +234,128 @@ img {
 
           & > .img {
             width: 100%;
+            margin: 10px;
             display: block;
             max-width: 100%;
-            margin: 10px;
+          }
+        }
+      }
+    }
+
+    & > .for-you {
+      width: 100%;
+      margin-top: 60px;
+
+      display: flex;
+      flex-direction: column;
+
+      & > .container-title {
+        width: 100%;
+        margin-bottom: 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > .title {
+          font-size: 3em;
+          color: #3F4256;
+          font-weight: bold;
+          margin-bottom: 20px;
+
+        }
+        & > .description {
+          width: 600px;
+          color: #3F4256;
+          font-size: 1.3em;
+          font-weight: normal;
+
+        }
+      }
+
+      & > .books {
+
+        display: flex;
+        justify-content: space-between;
+
+        & > .book {
+          margin: 20px;
+          padding: 20px;
+          border-radius: 10px;
+          // background: #3F4256;
+          border: 1px solid rgba(0, 0, 0, .04);
+
+          & > .img {
+            & > img {
+              width: 100%;
+              max-width: 100%;
+              border-radius: 5px;
+            }
+          }
+
+          & > .book-card {
+            margin: 20px 0 0 20px;
+
+            & > .card-title {
+              & > .title {
+                color: #3F4256;
+                font-size: 1.5em;
+                font-weight: bold;
+              }
+            }
+
+            & > .tags {
+              margin-bottom: 20px;
+              & > span {
+                color: #6C5DD4;
+                padding: 5px 15px;
+                margin-right: 10px;
+                border-radius: 10px;
+                background: #F1EEFF;
+              }
+            }
+
+            &  > .resume {
+              & > .description {
+                color: #3F4256;
+
+              }
+            }
+
+            & > .author {
+              margin-bottom: 20px;
+              & > .name {
+                font-weight: bold;
+                color: #3F4256;
+              }
+            }
+
+            & > .actions {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              & > .btn-cart {
+                border: none;
+                border-radius: 10px;
+                color: #fff;
+                background: #6C5DD4;
+                padding: 15px 20px;
+              }
+
+              &  > .prices {
+                & > .promocional-price {
+                  font-weight: bold;
+                  font-size: 1.3em;
+                  margin-right: 10px;
+                }
+                & > .initial-price {
+                  font-size: 1em;
+                  font-style: normal;
+                  text-decoration: line-through;
+                }
+              }
+            }
           }
         }
       }
