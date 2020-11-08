@@ -7,7 +7,7 @@ import { PublicMenuComponent } from './components/public-menu/public-menu.compon
 
 
 @NgModule({
-  declarations: [PublicMenuComponent, ContactComponent, HomeComponent],
+  declarations: [PublicMenuComponent],
   imports: [
     NgbModule,
     CommonModule,

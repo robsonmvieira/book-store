@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./public-menu.component.scss']
 })
 export class PublicMenuComponent implements OnInit {
-
+  public isMenuCollapsed = true;
   constructor() { }
 
   ngOnInit(): void {
