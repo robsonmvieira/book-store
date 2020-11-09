@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { PublicMenuComponent } from './components/public-menu/public-menu.component';
 import { RouterModule } from '@angular/router';
-
+import { CountdownModule } from 'ngx-countdown';
 // https://themeforest.net/item/bookoe-book-store-website-ui-design-psd-template/29272869
 @NgModule({
   declarations: [PublicMenuComponent],
@@ -12,12 +12,14 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RouterModule,
     NgbModule,
+    CountdownModule,
 
   ],
   exports: [
     BrowserModule,
     NgbModule,
     RouterModule,
+    CountdownModule,
 
     // components
     PublicMenuComponent,
