@@ -252,6 +252,7 @@
         </p>
       </div>
       <div class="counter">
+        <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
       </div>
     </div>
   </div>

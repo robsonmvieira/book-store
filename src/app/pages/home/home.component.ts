@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CountdownComponent } from 'ngx-countdown';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   images = [944, 1011, 984, 900].map((n) => `https://picsum.photos/id/${n}/2000/500`);
-  // images = [1, 2, 3, 4]
+
+  @ViewChild('cd', { static: false }) private countdown: CountdownComponent;
+  config = { leftTime: 80000 }
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.images)
+    // this.countdown.begin();
+  }
+  handleEvent(e) {
+    // console.log(e)
   }
 
 }
