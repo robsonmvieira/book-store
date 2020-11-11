@@ -9,6 +9,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     HomeComponent,
     ContactComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
