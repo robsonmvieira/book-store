@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LoginComponent } from './pages/login/login.component';
     AppComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
