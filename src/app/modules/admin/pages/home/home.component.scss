@@ -1,0 +1,62 @@
+.wapper {
+  display: grid;
+  grid-template-columns: minmax(160px, 200px) 1fr;
+  grid-template-areas:
+  'menu menu'
+  'aside main'
+  'aside main';
+
+
+  & > .top {
+    grid-area: menu;
+    display: grid;
+    grid-template-areas:
+    'toggle search icons';
+    grid-template-columns: minmax(180px, 180px) 1fr 250px;
+    padding: 20px;
+    align-items: center;
+
+
+    & > .toggle-icon-sidebar {
+      grid-area: toggle;
+    }
+
+    & > .search {
+      grid-area: search;
+      display: flex;
+
+      & > .icon {
+        margin-right: 10px;
+      }
+
+      & > .input {
+        border: none;
+        color: rgba($color: #000000, $alpha: .7);
+      }
+    }
+    & > .icons {
+      grid-area: icons;
+      display: flex;
+      & > .icon {
+        width: 100%;
+      }
+    }
+  }
+
+  & > .sidenav {
+    grid-area: aside;
+    background: yellow;
+    height: 100%;
+
+    & > .menu {
+      list-style: none;
+      height: 100%;
+    }
+
+  }
+
+  & > .main {
+    grid-area: main;
+    background: blue;
+  }
+}
