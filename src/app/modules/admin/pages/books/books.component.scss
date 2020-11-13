@@ -1,0 +1,121 @@
+.wapper {
+  background: #f3f4f6;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  'top top top'
+  'search search search'
+  'content content content';
+
+  & > .top-description {
+    display: grid;
+    grid-area: top;
+    align-items: center;
+    grid-template-columns: 2fr;
+    grid-template-areas:
+    'info info button';
+    padding: 20px;
+    & > .descriptions {
+      grid-area: info;
+
+      & > .span {
+        color: #262626;
+        margin-right: 15px;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      & > .latest {
+        color: #5a63a3;
+      }
+    }
+
+    & > .add-btn {
+      grid-area: button;
+      & > .button {
+        background: #5f63f2;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 16px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+
+  & > .search-container {
+    grid-area: search;
+    padding: 20px;
+
+    & > .search {
+      background: #fff;
+      width: 350px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 20px;
+      padding-left: 10px;
+
+
+      & > .input {
+        height: 40px;
+        width: 90%;
+        // background: transparent;
+        outline: none;
+        border: none;
+
+      }
+      & > input::placeholder {
+        color: #bbafb7;
+      }
+    }
+  }
+  & > .content {
+    grid-area: content;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+
+    & > .list {
+      display: flex;
+      background: #f3f4f6;
+      // justify-content: center;
+      align-items: center;
+      height: 40px;
+      justify-content: space-between;
+
+      & > .title {
+        color: #9299b8;
+        margin-left: 10px;
+      }
+      & > .author {
+        color: #9299b8;
+
+
+      }
+
+      & >.publisher {
+        color: #9299b8;
+
+      }
+
+      & > .isbn-10 {
+        color: #9299b8;
+
+      }
+      & > .isbn-13 {
+        color: #9299b8;
+
+      }
+
+      & > .status {
+        color: #9299b8;
+        margin-right: 10px;
+      }
+
+
+    }
+  }
+}
