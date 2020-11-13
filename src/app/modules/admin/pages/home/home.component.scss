@@ -15,7 +15,7 @@
     grid-template-columns: minmax(180px, 180px) 1fr 250px;
     padding: 20px;
     align-items: center;
-
+    // #5A5F7D
 
     & > .toggle-icon-sidebar {
       grid-area: toggle;
@@ -32,11 +32,14 @@
       & > .input {
         border: none;
         color: rgba($color: #000000, $alpha: .7);
+        outline: none;
       }
     }
     & > .icons {
       grid-area: icons;
       display: flex;
+      text-align: right;
+      // justify-content: space-around;
       & > .icon {
         width: 100%;
       }
@@ -45,18 +48,71 @@
 
   & > .sidenav {
     grid-area: aside;
-    background: yellow;
-    height: 100%;
+    // margin: 0 auto;
+
 
     & > .menu {
       list-style: none;
-      height: 100%;
+      padding-top: 20px;
+      padding-right: 20px;
+      cursor: pointer;
+
+      & > .item {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > .principal-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          & > .link {
+            display: flex;
+            align-items: center;
+
+            & > img {
+              margin-right: 15px;
+            }
+            &  > span {
+              // color: #5A5F7D;
+              color: #3b3146;
+            }
+          }
+        }
+        & > .submenu {
+          list-style: none;
+
+          & > .subitem {
+              margin-bottom: 10px;
+            & > .sublink {
+              color: #3b3146;
+              cursor: pointer;
+              text-decoration: none;
+            }
+          }
+          & > .subitem:first-of-type {
+            margin-top: 10px;
+          }
+        }
+      }
     }
 
   }
 
   & > .main {
     grid-area: main;
-    background: blue;
+    height: 94vh;
+
+  }
+}
+
+::ng-deep .card {
+  background: transparent;
+  border: none;
+  & > .card-header {
+    border: none;
+    background: transparent;
   }
 }

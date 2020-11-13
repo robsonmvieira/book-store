@@ -24,23 +24,135 @@
   </div>
   <aside class="sidenav">
     <ul class="menu">
-      <li class="icon">
-        <img src="../../../../../assets/icons/book.svg" alt="" srcset="">
-        <span>livros</span>
+      <li class="item" (click)="submenuBooks = !submenuBooks">
+        <div class="principal-item">
+          <div class="link">
+            <img src="../../../../../assets/icons/book.svg" alt="" srcset="">
+            <span>Livros</span>
+          </div>
+          <img src="../../../../../assets/icons/ra.svg" alt="" srcset="" *ngIf="!submenuBooks">
+          <img src="../../../../../assets/icons/da.svg" alt="" srcset="" *ngIf="submenuBooks">
+        </div>
+         <ul *ngIf="submenuBooks" class="submenu">
+          <li class="subitem">
+            <a [routerLink]="['books']" routerLinkActive="router-link-active" class="sublink">Livros</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Livro</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Livro</a>
+          </li>
+        </ul>
       </li>
-      <li class="icon">
-        <img src="../../../../../assets/icons/writer.svg" alt="" srcset="">
-        <span>Autores</span>
+      <li class="item" (click)="submenuAuthors = !submenuAuthors">
+        <div class="principal-item">
+          <div class="link">
+            <img src="../../../../../assets/icons/writer.svg" alt="" srcset="">
+            <span>Autores</span>
+          </div>
+          <img src="../../../../../assets/icons/ra.svg" alt="" srcset="" *ngIf="!submenuAuthors">
+          <img src="../../../../../assets/icons/da.svg" alt="" srcset="" *ngIf="submenuAuthors">
+        </div>
+         <ul *ngIf="submenuAuthors" class="submenu">
+          <li class="subitem">
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Autores</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Autor</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Autor</a>
+          </li>
+        </ul>
       </li>
-      <li class="icon">
-        <img src="../../../../../assets/icons/notes.svg" alt="" srcset="">
-        <span>Editoras</span>
+      <li class="item" (click)="submenuPublishers = !submenuPublishers">
+        <div class="principal-item">
+          <div class="link">
+            <img src="../../../../../assets/icons/editora.svg" alt="" srcset="">
+            <span>Editoras</span>
+          </div>
+          <img src="../../../../../assets/icons/ra.svg" alt="" srcset="" *ngIf="!submenuPublishers">
+          <img src="../../../../../assets/icons/da.svg" alt="" srcset="" *ngIf="submenuPublishers">
+        </div>
+         <ul *ngIf="submenuPublishers" class="submenu">
+          <li class="subitem">
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Editoras</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Nova Editora</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Editora</a>
+          </li>
+        </ul>
       </li>
-      <li class="icon">
-        <img src="../../../../../assets/icons/employees.svg" alt="" srcset="">
-        <span>Autores</span>
+      <li class="item"  (click)="submenuClients = !submenuClients">
+        <div class="principal-item">
+          <div class="link">
+            <img src="../../../../../assets/icons/employees.svg" alt="" srcset="">
+            <span>Clientes</span>
+          </div>
+          <img src="../../../../../assets/icons/ra.svg" alt="" srcset="" *ngIf="!submenuClients">
+          <img src="../../../../../assets/icons/da.svg" alt="" srcset="" *ngIf="submenuClients">
+        </div>
+        <ul *ngIf="submenuClients" class="submenu">
+          <li class="subitem">
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Clientes</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Cliente</a>
+          </li>
+          <li class="subitem">
+            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Cliente</a>
+          </li>
+        </ul>
+        <!-- <ngb-accordion #acc="ngbAccordion">
+          <ngb-panel id="clientes" class="teste">
+            <ng-template ngbPanelContent style="background: blue;">
+              <ul>
+                <li>
+                  <a [routerLink]="['/']" routerLinkActive="router-link-active">Livros</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/']" routerLinkActive="router-link-active">Novo Livro</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/']" routerLinkActive="router-link-active">Livro em Detalhe</a>
+                </li>
+              </ul>
+            </ng-template>
+
+          </ngb-panel>
+        </ngb-accordion> -->
       </li>
     </ul>
+    <!-- <li class="item" (click)="acc.toggle('outros')">
+      <div class="link">
+        <img src="../../../../../assets/icons/employees.svg" alt="" srcset="">
+        <span>Outros</span>
+      </div>
+      <img src="../../../../../assets/icons/ra.svg" alt="" srcset="">
+      <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel id="outros" class="teste">
+          <ng-template ngbPanelContent style="background: blue;">
+            <ul>
+              <li>
+                <a [routerLink]="['/']" routerLinkActive="router-link-active">Livros</a>
+              </li>
+              <li>
+                <a [routerLink]="['/']" routerLinkActive="router-link-active">Novo Livro</a>
+              </li>
+              <li>
+                <a [routerLink]="['/']" routerLinkActive="router-link-active">Livro em Detalhe</a>
+              </li>
+            </ul>
+          </ng-template>
+
+        </ngb-panel>
+      </ngb-accordion>
+
+    </li> -->
   </aside>
   <main class="main">
     <ng-content #main></ng-content>
