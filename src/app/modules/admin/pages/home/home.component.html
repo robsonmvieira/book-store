@@ -35,7 +35,7 @@
         </div>
          <ul *ngIf="submenuBooks" class="submenu">
           <li class="subitem">
-            <a [routerLink]="['books']" routerLinkActive="router-link-active" class="sublink">Livros</a>
+            <a [routerLink]="['livros']" routerLinkActive="router-link-active" class="sublink">Livros</a>
           </li>
           <li class="subitem">
             <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Livro</a>
@@ -56,7 +56,7 @@
         </div>
          <ul *ngIf="submenuAuthors" class="submenu">
           <li class="subitem">
-            <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Autores</a>
+            <a [routerLink]="['autores']" routerLinkActive="router-link-active" class="sublink">Autores</a>
           </li>
           <li class="subitem">
             <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Autor</a>
@@ -107,52 +107,8 @@
             <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Cliente</a>
           </li>
         </ul>
-        <!-- <ngb-accordion #acc="ngbAccordion">
-          <ngb-panel id="clientes" class="teste">
-            <ng-template ngbPanelContent style="background: blue;">
-              <ul>
-                <li>
-                  <a [routerLink]="['/']" routerLinkActive="router-link-active">Livros</a>
-                </li>
-                <li>
-                  <a [routerLink]="['/']" routerLinkActive="router-link-active">Novo Livro</a>
-                </li>
-                <li>
-                  <a [routerLink]="['/']" routerLinkActive="router-link-active">Livro em Detalhe</a>
-                </li>
-              </ul>
-            </ng-template>
-
-          </ngb-panel>
-        </ngb-accordion> -->
       </li>
     </ul>
-    <!-- <li class="item" (click)="acc.toggle('outros')">
-      <div class="link">
-        <img src="../../../../../assets/icons/employees.svg" alt="" srcset="">
-        <span>Outros</span>
-      </div>
-      <img src="../../../../../assets/icons/ra.svg" alt="" srcset="">
-      <ngb-accordion #acc="ngbAccordion">
-        <ngb-panel id="outros" class="teste">
-          <ng-template ngbPanelContent style="background: blue;">
-            <ul>
-              <li>
-                <a [routerLink]="['/']" routerLinkActive="router-link-active">Livros</a>
-              </li>
-              <li>
-                <a [routerLink]="['/']" routerLinkActive="router-link-active">Novo Livro</a>
-              </li>
-              <li>
-                <a [routerLink]="['/']" routerLinkActive="router-link-active">Livro em Detalhe</a>
-              </li>
-            </ul>
-          </ng-template>
-
-        </ngb-panel>
-      </ngb-accordion>
-
-    </li> -->
   </aside>
   <main class="main">
     <ng-content #main></ng-content>
