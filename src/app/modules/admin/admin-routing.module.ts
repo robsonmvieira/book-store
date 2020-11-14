@@ -10,11 +10,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'authors',
+    path: 'autores',
     component: AuthorsComponent
   },
   {
-    path: 'books',
+    path: 'livros',
     component: BooksComponent
   }
 ];
