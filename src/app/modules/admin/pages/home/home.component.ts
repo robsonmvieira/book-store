@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import ComponentService from 'src/app/modules/shared/services/component.service';
 
 @Component({
   selector: 'app-home-admin',
@@ -11,9 +13,16 @@ export class HomeComponent implements OnInit {
   submenuAuthors = false
   submenuPublishers = false
 
-  constructor() { }
+  @Output() newAuthor: EventEmitter<any> = new EventEmitter();
+
+  constructor(private componentService: ComponentService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  newAction (action: string) {
+    this.componentService.newAuthor(action)
+    this.router.navigate(['/admin/autores'])
   }
 
 }

@@ -35,14 +35,14 @@
         </div>
          <ul *ngIf="submenuBooks" class="submenu">
           <li class="subitem">
-            <a [routerLink]="['livros']" routerLinkActive="router-link-active" class="sublink">Livros</a>
+            <a routerLink="/admin/livros" routerLinkActive="router-link-active" class="sublink">Livros</a>
           </li>
           <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Livro</a>
+            <a class="sublink" (click)="newAction('new-book')" routerLinkActive="router-link-active">Novo Livro</a>
           </li>
-          <li class="subitem">
+          <!-- <li class="subitem">
             <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Livro</a>
-          </li>
+          </li> -->
         </ul>
       </li>
       <li class="item" (click)="submenuAuthors = !submenuAuthors">
@@ -56,14 +56,14 @@
         </div>
          <ul *ngIf="submenuAuthors" class="submenu">
           <li class="subitem">
-            <a [routerLink]="['autores']" routerLinkActive="router-link-active" class="sublink">Autores</a>
+            <a routerLink="/admin/autores" routerLinkActive="router-link-active" class="sublink">Autores</a>
           </li>
-          <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Autor</a>
+          <li class="subitem" >
+            <a class="sublink" (click)="newAction('new-author')" routerLinkActive="router-link-active">Novo Autor</a>
           </li>
-          <li class="subitem">
+          <!-- <li class="subitem">
             <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Autor</a>
-          </li>
+          </li> -->
         </ul>
       </li>
       <li class="item" (click)="submenuPublishers = !submenuPublishers">
@@ -80,11 +80,11 @@
             <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Editoras</a>
           </li>
           <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Nova Editora</a>
+            <a class="sublink" (click)="newAction('new-publisher')"  routerLinkActive="router-link-active">Nova Editora</a>
           </li>
-          <li class="subitem">
+          <!-- <li class="subitem">
             <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Editora</a>
-          </li>
+          </li> -->
         </ul>
       </li>
       <li class="item"  (click)="submenuClients = !submenuClients">
@@ -101,11 +101,11 @@
             <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Clientes</a>
           </li>
           <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Novo Cliente</a>
+            <a class="sublink" (click)="newAction('new-client')" routerLinkActive="router-link-active">Novo Cliente</a>
           </li>
-          <li class="subitem">
+          <!-- <li class="subitem">
             <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Cliente</a>
-          </li>
+          </li> -->
         </ul>
       </li>
     </ul>
