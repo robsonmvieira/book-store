@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-form-resource-modal',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormResourceModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
+  }
+
+  openModalFormResource(modal) {
+    this.modalService.open(modal, { scrollable: true });
   }
 
 }
