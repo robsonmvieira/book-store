@@ -14,6 +14,9 @@ import { FormResourceModalComponent } from './components/form-resource-modal/for
   exports: [
     CommonModule,
     NgbModule,
+
+    // components
+    FormResourceModalComponent,
   ]
 })
 export class SharedModule { }
