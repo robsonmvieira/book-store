@@ -1,9 +1,9 @@
-import { EventEmitter, Injectable } from '@angular/core'
-import { BehaviorSubject, Subject } from 'rxjs'
+import { Injectable } from '@angular/core'
+import { BehaviorSubject } from 'rxjs'
 
 
 Injectable({providedIn: 'root'})
-export default class ComponentService {
+export class ComponentService {
 
   newAuthorEvent = new BehaviorSubject('')
 
