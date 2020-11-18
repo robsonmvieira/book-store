@@ -1,8 +1,8 @@
 import { FormResourceModalComponent } from './../../../shared/components/form-resource-modal/form-resource-modal.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import ComponentService from 'src/app/modules/shared/services/component.service';
-import { map, take, tap } from 'rxjs/operators'
+import { ComponentService } from 'src/app/modules/shared/services/component.service';
+import { take } from 'rxjs/operators'
 import { Subscription } from 'rxjs';
 
 @Component({
