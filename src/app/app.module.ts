@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { AboutComponent } from './pages/about/about.component';
     CommonModule,
     CoreModule,
     AppRoutingModule,
+    HttpClientModule
 
   ],
   providers: [],
