@@ -1,22 +1,17 @@
-import { tap } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable, Injector } from '@angular/core';
 import Category from 'src/app/models/category.model';
 import { environment } from 'src/environments/environment';
+import { BaseResourceService } from '../shared/services/base-resource.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class CategoryService {
-  protected readonly apiPath = `${environment.url}categories`
-  constructor(protected httpClient: HttpClient) { }
+export class CategoryService extends BaseResourceService<Category> {
 
-
-  listcategories (): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(this.apiPath)
+  constructor (protected injector: Injector) {
+    super(`${environment.url}categories`, injector, Category.fromJson)
   }
 
 }
