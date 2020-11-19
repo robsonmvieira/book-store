@@ -10,8 +10,8 @@ import { ComponentService } from '../shared/services/component.service';
 @NgModule({
   declarations: [HomeComponent, AuthorsComponent, BooksComponent],
   imports: [
+    SharedModule,
     AdminRoutingModule,
-    SharedModule
   ],
   providers: [ComponentService]
 })
