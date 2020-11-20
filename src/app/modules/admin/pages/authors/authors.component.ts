@@ -2,7 +2,7 @@ import { FormResourceModalComponent } from './../../../shared/components/form-re
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentService } from 'src/app/modules/shared/services/component.service';
-import { take } from 'rxjs/operators'
+import { map, take, tap } from 'rxjs/operators'
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,26 +12,26 @@ import { Subscription } from 'rxjs';
 })
 export class AuthorsComponent implements OnInit {
   subscription: Subscription
-
+  value = ''
   @ViewChild('modalForm', { static: false }) modal: FormResourceModalComponent;
   @ViewChild('authorForm', {static: false}) modalForm;
-  constructor(private router: Router, private componentService: ComponentService) { }
+  constructor(private router: Router,  private componentService: ComponentService) { }
 
   ngOnInit(): void {
-
-    // this.modal.openModalFormResource()
-    this.subscription = this.componentService.newAuthorEvent
+    this.subscription = this.componentService.getEvent()
     .pipe(
-      take(1)
+      map(d => this.value = d),
+      take(1),
+      map(c => c = ''),
     )
-    .subscribe((ev: string) =>  {
-      if (ev.includes('new-author')) {
+    .subscribe(() =>  {
+      if (this.value === 'new-author') {
         this.router.navigate(['/admin/autores']).then(() => {
           this.modal.openModalFormResource(this.modalForm)
         })
       }
     })
-
+    this.componentService.newAuthor('')
   }
   openModalFormResource(modal) {
     this.modal.openModalFormResource(modal)
