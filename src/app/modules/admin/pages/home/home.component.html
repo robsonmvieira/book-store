@@ -45,6 +45,7 @@
           </li> -->
         </ul>
       </li>
+
       <li class="item" (click)="submenuAuthors = !submenuAuthors">
         <div class="principal-item">
           <div class="link">
@@ -55,9 +56,11 @@
           <img src="../../../../../assets/icons/da.svg" alt="" srcset="" *ngIf="submenuAuthors">
         </div>
          <ul *ngIf="submenuAuthors" class="submenu">
+
           <li class="subitem">
             <a routerLink="/admin/autores" routerLinkActive="router-link-active" class="sublink">Autores</a>
           </li>
+
           <li class="subitem" >
             <a class="sublink" (click)="newAction('new-author')" routerLinkActive="router-link-active">Novo Autor</a>
           </li>
@@ -66,6 +69,7 @@
           </li> -->
         </ul>
       </li>
+
       <li class="item" (click)="submenuPublishers = !submenuPublishers">
         <div class="principal-item">
           <div class="link">
