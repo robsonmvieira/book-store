@@ -5,11 +5,15 @@ import { BehaviorSubject } from 'rxjs'
 Injectable({providedIn: 'root'})
 export class ComponentService {
 
-  newAuthorEvent = new BehaviorSubject('')
+  private newAuthorEvent = new BehaviorSubject<string>('')
 
   constructor () {}
 
   newAuthor (action: string) {
     this.newAuthorEvent.next(action)
+  }
+
+  getEvent() {
+    return this.newAuthorEvent
   }
 }
