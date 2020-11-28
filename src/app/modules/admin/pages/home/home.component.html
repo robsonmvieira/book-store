@@ -40,9 +40,6 @@
           <li class="subitem">
             <a class="sublink" (click)="newAction('new-book')" routerLinkActive="router-link-active">Novo Livro</a>
           </li>
-          <!-- <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Livro</a>
-          </li> -->
         </ul>
       </li>
 
@@ -64,9 +61,7 @@
           <li class="subitem" >
             <a class="sublink" (click)="newAction('new-author')" routerLinkActive="router-link-active">Novo Autor</a>
           </li>
-          <!-- <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Autor</a>
-          </li> -->
+
         </ul>
       </li>
 
@@ -80,15 +75,15 @@
           <img src="../../../../../assets/icons/da.svg" alt="" srcset="" *ngIf="submenuPublishers">
         </div>
          <ul *ngIf="submenuPublishers" class="submenu">
+
           <li class="subitem">
             <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Editoras</a>
           </li>
+
           <li class="subitem">
             <a class="sublink" (click)="newAction('new-publisher')"  routerLinkActive="router-link-active">Nova Editora</a>
           </li>
-          <!-- <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Editora</a>
-          </li> -->
+
         </ul>
       </li>
       <li class="item"  (click)="submenuClients = !submenuClients">
@@ -101,15 +96,15 @@
           <img src="../../../../../assets/icons/da.svg" alt="" srcset="" *ngIf="submenuClients">
         </div>
         <ul *ngIf="submenuClients" class="submenu">
+
           <li class="subitem">
             <a [routerLink]="['/']" routerLinkActive="router-link-active" class="sublink">Clientes</a>
           </li>
+
           <li class="subitem">
             <a class="sublink" (click)="newAction('new-client')" routerLinkActive="router-link-active">Novo Cliente</a>
           </li>
-          <!-- <li class="subitem">
-            <a class="sublink" [routerLink]="['/']" routerLinkActive="router-link-active">Cliente</a>
-          </li> -->
+
         </ul>
       </li>
     </ul>
