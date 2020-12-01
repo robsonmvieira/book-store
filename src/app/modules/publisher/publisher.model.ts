@@ -1,3 +1,5 @@
+import { Author } from '../author/author.model';
+import { Book } from '../book/book.model';
 import { Base } from '../shared/models/base.model';
 
 export class Publisher extends Base {
