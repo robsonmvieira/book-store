@@ -1,0 +1,112 @@
+.wapper {
+  padding: 20px;
+  background: #f3f4f6;
+
+  display: grid;
+  grid-template-areas:
+  'top top top'
+  'search search search'
+  'content content content';
+  grid-template-columns: 1fr;
+
+  & > .top-description {
+    padding: 20px;
+    align-items: center;
+
+    display: grid;
+    grid-area: top;
+    grid-template-areas:
+    'info info button';
+    grid-template-columns: 2fr;
+    & > .descriptions {
+      grid-area: info;
+
+      & > .span {
+        font-size: 1.5em;
+        color: #262626;
+        font-weight: bold;
+        margin-right: 15px;
+      }
+      & > .latest {
+        color: #5a63a3;
+      }
+    }
+
+    & > .add-btn {
+      grid-area: button;
+
+      & > .button {
+        border: none;
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 12px 16px;
+        text-align: center;
+        background: #5f63f2;
+      }
+    }
+  }
+
+  & > .search-container {
+    padding: 20px;
+    grid-area: search;
+
+    & > .search {
+      width: 350px;
+      padding-left: 10px;
+      background: #fff;
+      border-radius: 10px;
+      padding-right: 20px;
+
+      display: flex;
+      justify-content: space-between;
+
+
+      & > .input {
+        width: 90%;
+        border: none;
+        height: 40px;
+        outline: none;
+        color: #9299b8;
+
+      }
+      & > input::placeholder {
+        color: #bbafb7;
+      }
+    }
+  }
+  & > .content {
+    padding: 20px;
+    grid-area: content;
+    background: #fff;
+    border-radius: 10px;
+
+    & > .list {
+      height: 60px;
+      padding: 0 30px;
+      border-radius: 10px;
+      background: #f3f4f6;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & > .title {
+        color: #9299b8;
+        margin-left: 10px;
+      }
+      & > .author {
+        color: #9299b8;
+
+
+      }
+
+      & >.publisher {
+        color: #9299b8;
+
+      }
+
+    }
+  }
+}
