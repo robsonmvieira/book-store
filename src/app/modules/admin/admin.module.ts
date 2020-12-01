@@ -6,9 +6,10 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthorsComponent } from './pages/authors/authors.component';
 import { BooksComponent } from './pages/books/books.component';
 import { ComponentService } from '../shared/services/component.service';
+import { PublishersComponent } from './pages/publishers/publishers.component';
 
 @NgModule({
-  declarations: [HomeComponent, AuthorsComponent, BooksComponent],
+  declarations: [HomeComponent, AuthorsComponent, BooksComponent, PublishersComponent],
   imports: [
     SharedModule,
     AdminRoutingModule,
