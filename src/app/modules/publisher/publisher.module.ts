@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { SharedModule } from '../shared/shared.module';
 import { PublisherRoutingModule } from './publisher-routing.module';
+
+import { PublisherFormComponent } from './form/publish-form.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [PublisherFormComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     PublisherRoutingModule
-  ]
+  ],
+  exports: [PublisherFormComponent]
 })
 export class PublisherModule { }
