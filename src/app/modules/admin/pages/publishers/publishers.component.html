@@ -1,4 +1,5 @@
   <app-home-admin>
+    <app-form-publisher #publisherModalForm ></app-form-publisher>
     <div class="wapper">
       <div class="top-description">
         <div class="descriptions">
@@ -10,7 +11,7 @@
         </span>
         </div>
         <div class="add-btn">
-          <button class="button">
+          <button class="button" (click)="openModal(publisherModalForm)">
             + Adicionar Editora
           </button>
         </div>
@@ -51,6 +52,5 @@
           </ul>
         </div>
       </div>
-
     </div>
 </app-home-admin>
