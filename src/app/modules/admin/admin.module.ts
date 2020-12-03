@@ -7,9 +7,10 @@ import { AuthorsComponent } from './pages/authors/authors.component';
 import { BooksComponent } from './pages/books/books.component';
 import { ComponentService } from '../shared/services/component.service';
 import { PublishersComponent } from './pages/publishers/publishers.component';
+import { FormComponent } from './pages/publishers/form/form.component';
 
 @NgModule({
-  declarations: [HomeComponent, AuthorsComponent, BooksComponent, PublishersComponent],
+  declarations: [HomeComponent, AuthorsComponent, BooksComponent, PublishersComponent, FormComponent],
 
   imports: [
     SharedModule,
