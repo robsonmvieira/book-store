@@ -14,7 +14,7 @@ export class FormResourceModalComponent implements OnInit {
   }
 
   openModalFormResource(modal) {
-    this.modalService.open(modal, { scrollable: true });
+    this.modalService.open(modal, {size: 'xl'});
   }
 
 }
