@@ -9,6 +9,6 @@ import { Publisher } from './publisher.model';
 export class PublisherService extends BaseResourceService<Publisher> {
 
   constructor (protected injector: Injector) {
-    super(`${environment.url}categories`, injector, Publisher.fromJson)
+    super(`${environment.url}publishers`, injector, Publisher.fromJson)
   }
 }

@@ -82,6 +82,9 @@
     background: #fff;
     border-radius: 10px;
 
+    display: flex;
+    flex-direction: column;
+
     & > .list {
       height: 60px;
       padding: 0 30px;
@@ -107,6 +110,21 @@
 
       }
 
+    }
+
+    & > .content--body {
+
+      & > .body--list {
+        list-style: none;
+
+        display: flex;
+        flex-direction: column;
+
+        & >.body--item {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
     }
   }
 }

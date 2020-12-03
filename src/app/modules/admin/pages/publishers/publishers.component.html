@@ -6,7 +6,7 @@
           Editoras |
         </span>
         <span class="latest">
-          25 recentes
+          {{ (publishers$ | async)?.length }} recentes
         </span>
         </div>
         <div class="add-btn">
@@ -34,9 +34,23 @@
             <span>Site</span>
           </div>
         </div>
+
+        <div class="content--body">
+          <ul class="body--list">
+              <li class="body--item" *ngFor="let publisher of publishers$ | async">
+               <span>
+                {{ publisher.name }}
+               </span>
+               <span>
+                {{ publisher.email }}
+               </span>
+               <span>
+                {{ publisher.web_site }}
+               </span>
+              </li>
+          </ul>
+        </div>
       </div>
-      <ng-container>
-      </ng-container>
 
     </div>
 </app-home-admin>

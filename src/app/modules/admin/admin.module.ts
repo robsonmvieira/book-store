@@ -10,6 +10,7 @@ import { PublishersComponent } from './pages/publishers/publishers.component';
 
 @NgModule({
   declarations: [HomeComponent, AuthorsComponent, BooksComponent, PublishersComponent],
+
   imports: [
     SharedModule,
     AdminRoutingModule,
