@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router,  } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PublisherFormComponent } from 'src/app/modules/publisher/form/publish-form.component';
 import { Publisher } from 'src/app/modules/publisher/publisher.model';
@@ -14,7 +14,9 @@ export class PublishersComponent implements OnInit {
 
   @ViewChild(PublisherFormComponent, {static: false}) modal: PublisherFormComponent
   publishers$: Observable<Publisher[]>
-  constructor(private publisherService: PublisherService, private modalService: NgbModal) { }
+  constructor(private publisherService: PublisherService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
 
@@ -24,7 +26,10 @@ export class PublishersComponent implements OnInit {
 
   openModal() {
     this.modal.openFormModal()
+  }
 
+  goToDetail(id: string): void {
+    this.router.navigate(['/admin/editoras', id])
   }
 
 }

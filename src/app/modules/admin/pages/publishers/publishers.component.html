@@ -38,7 +38,7 @@
 
         <div class="content--body">
           <ul class="body--list">
-              <li class="body--item" *ngFor="let publisher of publishers$ | async">
+              <li class="body--item" *ngFor="let publisher of publishers$ | async" (click)="goToDetail(publisher.id)">
                <span class="item--name">
                 {{ publisher.name }}
                </span>
