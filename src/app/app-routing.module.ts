@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./modules/admin/admin.module').then(a => a.AdminModule)
+  },
+  {
+    path: 'admin/editoras',
+    loadChildren: () =>import('./modules/publisher/publisher.module').then(e => e.PublisherModule)
   }
 
 ];
