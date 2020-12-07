@@ -12,8 +12,8 @@ export class PublisherFormComponent implements OnInit {
 
   publisher: Publisher
   publisherForm: FormGroup
-  titleForm = ""
-  titleBtn = ""
+  titleForm = ''
+  titleBtn = ''
   @ViewChild('longContent', {static: false}) modal;
   constructor(private modalService: NgbModal, private fb: FormBuilder) { }
 
@@ -25,14 +25,12 @@ export class PublisherFormComponent implements OnInit {
 
   openFormModal (publisherEdit?: Publisher) {
     if(publisherEdit) {
-      this.titleForm = "Editar Categoria"
-      this.titleBtn = "Atualizar"
-      this.publisherForm.patchValue(publisherEdit)
+      this.setFormToEditMode()
+      this.fillFormToEdit(this.publisherForm, publisherEdit)
     }
     else {
-      this.titleForm = "Nova Categoria"
-      this.titleBtn = "Salvar"
-      this.publisherForm.reset()
+      this.setFormToCreateMode()
+      this.clearForm()
     }
     this.modalService.open(this.modal, {size: 'xl'})
   }
@@ -45,4 +43,23 @@ export class PublisherFormComponent implements OnInit {
     })
   }
 
+  private fillFormToEdit(form: FormGroup, publisher: Publisher): void {
+    form.patchValue(publisher)
+  }
+
+  private clearForm (): void {
+    this.publisherForm.reset()
+  }
+
+  private setFormToEditMode (): void {
+    this.titleForm = 'Editar Categoria'
+    this.titleBtn = 'Atualizar'
+  }
+
+  private setFormToCreateMode (): void {
+    this.titleForm = 'Nova Categoria'
+    this.titleBtn = 'Salvar'
+  }
 }
+
+
