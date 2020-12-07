@@ -32,4 +32,8 @@ export class PublishersComponent implements OnInit {
     this.router.navigate(['/admin/editoras', id])
   }
 
+  goToEdit(id: string): void {
+    console.log('object')
+  }
+
 }

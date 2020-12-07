@@ -34,11 +34,14 @@
           <div class="publisher">
             <span>Site</span>
           </div>
+          <div class="publisher">
+            <span><img src="../../../../../assets/icons/hammer.svg" alt="" srcset=""></span>
+          </div>
         </div>
 
         <div class="content--body">
           <ul class="body--list">
-              <li class="body--item" *ngFor="let publisher of publishers$ | async" (click)="goToDetail(publisher.id)">
+              <li class="body--item" *ngFor="let publisher of publishers$ | async">
                <span class="item--name">
                 {{ publisher.name }}
                </span>
@@ -47,6 +50,17 @@
                </span>
                <span>
                 {{ publisher.web_site }}
+               </span>
+               <span>
+                <img src="../../../../../assets/icons/edit-button.svg"
+                alt="edit button icon"
+                style="margin-right: 10px;"
+                (click)="goToEdit(publisher.id)"
+                >
+                <img
+                src="../../../../../assets/icons/details.svg"
+                alt="detail button icon"
+                (click)="goToDetail(publisher.id)">
                </span>
               </li>
           </ul>
