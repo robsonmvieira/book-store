@@ -6,27 +6,36 @@
     </button>
   </div>
   <div class="modal-body">
-    <h1>Nova Editora</h1>
+    <h1>{{ titleForm }}</h1>
     <div class="container">
-      <form>
+      <form [formGroup]="publisherForm">
         <div class="form-row">
           <label for="exampleInputEmail1">Nome:</label>
-          <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Nome da Editora">
+          <input type="text" class="form-control"
+          aria-describedby="emailHelp"
+          placeholder="Nome da Editora"
+          formControlName="name">
         </div>
 
         <div class="form-row mt-4 mb-4">
           <div class="col">
             <label for="exampleInputPassword1">Web site:</label>
-            <input type="text" class="form-control" placeholder="Web site">
+            <input type="text"
+            class="form-control"
+            placeholder="Web site"
+            formControlName="web_site">
           </div>
           <div class="col">
             <label for="exampleInputPassword1">E-mail:</label>
-            <input type="text" class="form-control" placeholder="E-mail">
+            <input type="text"
+            class="form-control"
+            placeholder="E-mail"
+            formControlName="email">
           </div>
         </div>
 
         <div class="form-group row d-flex flex-row-reverse mt-3">
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" class="btn btn-primary">{{ titleBtn }}</button>
         </div>
       </form>
     </div>
