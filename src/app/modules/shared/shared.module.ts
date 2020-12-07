@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormResourceModalComponent } from './components/form-resource-modal/form-resource-modal.component';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,11 +12,15 @@ import { HttpClientModule } from '@angular/common/http'
     CommonModule,
     NgbModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
     CommonModule,
     NgbModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
 
     // components
     FormResourceModalComponent,
