@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router,  } from '@angular/router';
-import { Observable } from 'rxjs';
 import { PublisherFormComponent } from 'src/app/modules/publisher/form/publish-form.component';
 import { Publisher } from 'src/app/modules/publisher/publisher.model';
 import { PublisherService } from 'src/app/modules/publisher/publisher.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-publishers',
@@ -13,19 +13,28 @@ import { PublisherService } from 'src/app/modules/publisher/publisher.service';
 export class PublishersComponent implements OnInit {
 
   @ViewChild(PublisherFormComponent, {static: false}) modal: PublisherFormComponent
-  publishers$: Observable<Publisher[]>
+  publishers: Publisher[] =[]
+  publisherSelectedToEdit: Publisher;
   constructor(private publisherService: PublisherService,
-    private router: Router
+    private router: Router,
+    private toastrService: ToastrService
     ) { }
 
   ngOnInit(): void {
 
-    this.publishers$ = this.publisherService.list()
+    this.publisherService.list().subscribe(response => {
+      this.publishers = response
+    })
 
   }
 
-  openModal() {
-    this.modal.openFormModal()
+
+  openModal(publisherToEdit?: Publisher) {
+    if(publisherToEdit) {
+      this.modal.openFormModal(publisherToEdit)
+    } else {
+      this.modal.openFormModal()
+    }
   }
 
   goToDetail(id: string): void {
@@ -33,7 +42,15 @@ export class PublishersComponent implements OnInit {
   }
 
   goToEdit(id: string): void {
-    console.log('object')
+    this.publisherSelectedToEdit =  this.publishers.find(pub => pub.id == id)
+    if (this.publisherSelectedToEdit) {
+      this.openModal(this.publisherSelectedToEdit)
+    } else {
+      this.toastrService.error('Um erro Interno aconteceu. Tente mais tarde', 'error interno ', {
+        closeButton: true,
+        timeOut: 3000,
+      })
+    }
   }
 
 }

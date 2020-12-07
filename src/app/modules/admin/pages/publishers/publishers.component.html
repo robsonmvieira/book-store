@@ -7,7 +7,7 @@
           Editoras |
         </span>
         <span class="latest">
-          {{ (publishers$ | async)?.length }} recentes
+          {{ publishers?.length }} recentes
         </span>
         </div>
         <div class="add-btn">
@@ -41,7 +41,7 @@
 
         <div class="content--body">
           <ul class="body--list">
-              <li class="body--item" *ngFor="let publisher of publishers$ | async">
+              <li class="body--item" *ngFor="let publisher of publishers">
                <span class="item--name">
                 {{ publisher.name }}
                </span>
