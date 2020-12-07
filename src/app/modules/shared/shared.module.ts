@@ -4,7 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormResourceModalComponent } from './components/form-resource-modal/form-resource-modal.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [FormResourceModalComponent],
@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     CommonModule,

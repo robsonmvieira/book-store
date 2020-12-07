@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,11 @@ import { AboutComponent } from './pages/about/about.component';
     AboutComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     CoreModule,
     AppRoutingModule,
-      // HttpClientModule
+    ToastrModule.forRoot(),
 
   ],
   providers: [],
