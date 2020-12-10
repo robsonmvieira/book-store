@@ -5,17 +5,27 @@ import { Select, Store } from '@ngxs/store';
 import { ComponentState } from 'src/app/state/components/state';
 import { SetSelectedOption } from 'src/app/state/components/addNewResource';
 import { AuthorFormComponent } from 'src/app/modules/author/author-form/author-form.component';
+import { Author } from 'src/app/modules/author/author.model';
+import { AuthorState } from 'src/app/state/authors/state';
+import { GetAllAuthors } from 'src/app/state/authors/actions';
 
 @Component({
   selector: 'app-authors',
   templateUrl: './authors.component.html',
   styleUrls: ['./authors.component.scss']
 })
+
 export class AuthorsComponent implements OnInit, AfterViewInit {
   subscription: Subscription
 
   @Select(ComponentState.selectedOption)
   valueEmitedByMenu: Observable<string>
+
+  @Select(AuthorState.allAuthors)
+  authors$: Observable<Author[]>
+
+  @Select(AuthorState.authorsListSize)
+  authorCount$: Observable<number>
 
   isNewAuthor = null
 
@@ -23,7 +33,11 @@ export class AuthorsComponent implements OnInit, AfterViewInit {
 
   constructor(private store: Store) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.store.dispatch( new GetAllAuthors())
+
+   }
 
 
   ngAfterViewInit(): void {

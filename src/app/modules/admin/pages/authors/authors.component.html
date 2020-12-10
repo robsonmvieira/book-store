@@ -7,7 +7,7 @@
         Autores |
       </span>
       <span class="latest">
-        10 recentes
+        {{ authorCount$ | async }} recentes
       </span>
       </div>
       <div class="add-btn">
@@ -32,18 +32,21 @@
           <span>Email</span>
         </div>
         <div class="publisher">
-          <span>Site</span>
+          <span>Livros cadastrados</span>
         </div>
       </div>
 
       <div class="content--body">
         <ul class="body--list">
-            <li class="body--item">
+            <li class="body--item" *ngFor="let author of (authors$ | async)">
              <span class="item--name">
+               {{ author.name }}
              </span>
              <span>
+               {{ author.email }}
              </span>
              <span>
+               {{ author.books?.length ?  author.books.length : 0 }}
              </span>
             </li>
         </ul>
