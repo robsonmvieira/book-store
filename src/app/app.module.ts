@@ -17,6 +17,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { PublisherState } from './state/publishers';
 import { ComponentState } from './state/components/state';
 import { environment } from 'src/environments/environment';
+import { AuthorState } from './state/authors/state';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,13 @@ import { environment } from 'src/environments/environment';
     CoreModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
-    NgxsModule.forRoot([PublisherState, ComponentState], { developmentMode: !environment.production }), NgxsReduxDevtoolsPluginModule.forRoot()
+    NgxsModule.forRoot([
+      PublisherState,
+      ComponentState,
+      AuthorState
+    ],
+    { developmentMode: !environment.production }),
+    NgxsReduxDevtoolsPluginModule.forRoot()
 
   ],
   providers: [],
