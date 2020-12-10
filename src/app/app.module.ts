@@ -12,6 +12,11 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { PublisherState } from './state/publishers';
+import { ComponentState } from './state/components/state';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     CoreModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
+    NgxsModule.forRoot([PublisherState, ComponentState], { developmentMode: !environment.production }), NgxsReduxDevtoolsPluginModule.forRoot()
 
   ],
   providers: [],
