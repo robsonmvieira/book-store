@@ -1,6 +1,8 @@
 import { ComponentService } from 'src/app/modules/shared/services/component.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { SetSelectedOption } from 'src/app/state/components/addNewResource';
 
 @Component({
   selector: 'app-home-admin',
@@ -17,14 +19,16 @@ export class HomeComponent implements OnInit {
 
   @Output() newAuthor: EventEmitter<any> = new EventEmitter();
 
-  constructor(private componentService: ComponentService, private router: Router) { }
+  constructor(private componentService: ComponentService,
+    private router: Router,
+    private store: Store) { }
 
   ngOnInit(): void {
   }
 
-  newAction (action: string) {
-    this.componentService.newAuthor(action)
-    this.router.navigate(['/admin/autores'])
+  newAction (action: string, resource: string) {
+    this.store.dispatch(new SetSelectedOption(action))
+    this.router.navigate([`/admin/${resource}`])
   }
 
 }
