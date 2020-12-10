@@ -1,45 +1,54 @@
 <app-home-admin>
   <p> sou o authors</p>
-  <!-- <ng-content #main>
-  </ng-content> -->
+  <div class="wapper">
+    <div class="top-description">
+      <div class="descriptions">
+      <span class="span">
+        Editoras |
+      </span>
+      <span class="latest">
+        10 recentes
+      </span>
+      </div>
+      <div class="add-btn">
+        <button class="button" (click)="openModal(modalForm)">
+          + Adicionar Autor
+        </button>
+      </div>
+    </div>
+    <div class="search-container">
+      <div class="search">
+        <input type="text" placeholder="Buscar Editora" class="input">
+        <img src="../../../../../assets/icons/loupe.svg" alt="" srcset="">
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="list">
+        <div class="title">
+          <span>Nome</span>
+        </div>
+        <div class="author">
+          <span>Email</span>
+        </div>
+        <div class="publisher">
+          <span>Site</span>
+        </div>
+      </div>
+
+      <div class="content--body">
+        <ul class="body--list">
+            <li class="body--item">
+             <span class="item--name">
+             </span>
+             <span>
+             </span>
+             <span>
+             </span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <app-form-resource-modal #modalForm ></app-form-resource-modal>
 </app-home-admin>
-<!--
-<ng-template #authorForm>
-
-  <h1>Author Form</h1>
-  <h2>Adicione um novo Autor ou edit</h2>
-</ng-template> -->
-<ng-template #authorForm let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">Formulário de Autor</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-  </div>
-</ng-template>
-<!-- <p>Esse Pileque..</p>
-<button class="btn btn-outline-primary mb-2 mr-2" (click)="openModalFormResource(authorForm)">Salvar</button> -->

@@ -1,3 +1,4 @@
+import { AuthorModule } from './../author/author.module';
 import { NgModule } from '@angular/core';
 
 import { AdminRoutingModule } from './admin-routing.module';
@@ -15,7 +16,8 @@ import { PublisherModule } from '../publisher/publisher.module';
   imports: [
     SharedModule,
     AdminRoutingModule,
-    PublisherModule
+    PublisherModule,
+    AuthorModule
   ],
   providers: [ComponentService]
 })

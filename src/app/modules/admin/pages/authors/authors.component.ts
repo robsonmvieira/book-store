@@ -1,44 +1,45 @@
-import { FormResourceModalComponent } from './../../../shared/components/form-resource-modal/form-resource-modal.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { ComponentService } from 'src/app/modules/shared/services/component.service';
-import { map, take, tap } from 'rxjs/operators'
-import { Subscription } from 'rxjs';
+
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
+import { ComponentState } from 'src/app/state/components/state';
+import { SetSelectedOption } from 'src/app/state/components/addNewResource';
+import { AuthorFormComponent } from 'src/app/modules/author/author-form/author-form.component';
 
 @Component({
   selector: 'app-authors',
   templateUrl: './authors.component.html',
   styleUrls: ['./authors.component.scss']
 })
-export class AuthorsComponent implements OnInit {
+export class AuthorsComponent implements OnInit, AfterViewInit {
   subscription: Subscription
-  value = ''
-  @ViewChild('modalForm', { static: false }) modal: FormResourceModalComponent;
-  @ViewChild('authorForm', {static: false}) modalForm;
-  constructor(private router: Router,  private componentService: ComponentService) { }
 
-  ngOnInit(): void {
-    this.subscription = this.componentService.getEvent()
-    .pipe(
-      map(d => this.value = d),
-      take(1),
-      map(c => c = ''),
-    )
-    .subscribe(() =>  {
-      if (this.value === 'new-author') {
-        this.router.navigate(['/admin/autores']).then(() => {
-          this.modal.openModalFormResource(this.modalForm)
-        })
-      }
+  @Select(ComponentState.selectedOption)
+  valueEmitedByMenu: Observable<string>
+
+  isNewAuthor = null
+
+  @ViewChild(AuthorFormComponent, { static: false }) modal: AuthorFormComponent;
+
+  constructor(private store: Store) { }
+
+  ngOnInit(): void { }
+
+
+  ngAfterViewInit(): void {
+    this.valueEmitedByMenu.subscribe(value => {
+      this.isNewAuthor = value
     })
-    this.componentService.newAuthor('')
-  }
-  openModalFormResource(modal) {
-    this.modal.openModalFormResource(modal)
+
+    if (this.isNewAuthor !== null && this.isNewAuthor.includes('new-author')) {
+      this.modal.openModalFormResource()
+      this.store.dispatch(new SetSelectedOption(null))
+    }
   }
 
-  ngOnDestroy () {
-    this.subscription.unsubscribe()
+
+  openModal() {
+    this.modal.openModalFormResource()
   }
 
 }
