@@ -17,6 +17,8 @@ import { GetPublishers } from './actions';
 @Injectable()
 export class PublisherState {
 
+  constructor(private publisherService: PublisherService) {}
+
   @Selector()
   static publisherLength(state: PublisherStateModel) {
     return state.publishers.length
@@ -27,7 +29,6 @@ export class PublisherState {
     return state.publishers
   }
 
-  constructor(private publisherService: PublisherService) {}
   @Action(GetPublishers)
   getPublishers (ctx: StateContext<PublisherStateModel>) {
     return this.publisherService.list().pipe(
