@@ -6,28 +6,30 @@
     </button>
   </div>
   <div class="modal-body">
-    <form>
+    <form [formGroup]="authorFom">
       <div class="row">
         <div class="col">
           <label for="exampleInputPassword1" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="exampleInputPassword1">
+          <input type="text" class="form-control" formControlName="name">
         </div>
         <div class="col">
-          <label for="exampleInputPassword1" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="exampleInputPassword1">
+          <label for="exampleInputPassword1" class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email">
         </div>
         <div class="col">
           <label for="exampleInputPassword1" class="form-label">Editora</label>
-          <select class="form-control" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select
+            class="form-control"
+            aria-label="Default select example"
+            (change)="setPublisher($event.target.value)"
+            formControlName="publisher">
+            <option selected disabled>Selecione a editora</option>
+            <option [selected]="publisher.id === hasOptionSelected?.id ? true : null" [value]="publisher.id" *ngFor="let publisher of (publishers$ | async )">{{ publisher.name }}</option>
           </select>
         </div>
       </div>
       <div class="row d-flex justify-content-end mt-5 pr-4">
-        <button type="submit" class="btn btn-primary ">Cadastrar</button>
+        <button type="submit" class="btn btn-primary" (click)="submitForm()" >Cadastrar</button>
       </div>
     </form>
   </div>
