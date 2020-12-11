@@ -32,6 +32,10 @@ const routes: Routes = [
   {
     path: 'admin/editoras',
     loadChildren: () =>import('./modules/publisher/publisher.module').then(e => e.PublisherModule)
+  },
+  {
+    path: 'admin/autores',
+    loadChildren: () =>import('./modules/author/author.module').then(a => a.AuthorModule)
   }
 
 ];
