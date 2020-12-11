@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AuthorRoutingModule } from './author-routing.module';
 import { AuthorFormComponent } from './author-form/author-form.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [AuthorFormComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     AuthorRoutingModule
   ],
   exports: [ AuthorFormComponent ]
