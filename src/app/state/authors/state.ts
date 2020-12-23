@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { Action, Selector, State, StateContext, Store } from '@ngxs/store';
 import { map } from 'rxjs/operators';
 import { Author } from 'src/app/modules/author/author.model';
 import { AuthorService } from 'src/app/modules/author/author.service';
-import { GetAllAuthors } from './actions';
+import { CreateAuthor, GetAllAuthors, UpdateAuthor } from './actions';
 
 export interface AuthorStateModel {
   authors: Author[]
@@ -19,7 +19,7 @@ export interface AuthorStateModel {
 @Injectable()
 export class AuthorState {
 
-  constructor(private authorService: AuthorService){}
+  constructor(private authorService: AuthorService, private store: Store){}
 
   @Selector()
   static allAuthors(ctx: AuthorStateModel) {
@@ -32,7 +32,7 @@ export class AuthorState {
   }
 
   @Action(GetAllAuthors)
-  authorsList(ctx: StateContext<AuthorStateModel>) {
+  authorsList (ctx: StateContext<AuthorStateModel>) {
     return this.authorService.list().pipe(
       map( response => {
         const state = ctx.getState()
@@ -42,6 +42,25 @@ export class AuthorState {
         })
       })
     )
+  }
+
+  @Action(CreateAuthor)
+  addAuthor (ctx: StateContext<AuthorStateModel>, action: CreateAuthor) {
+
+    return this.authorService.create(action.payload).subscribe( (response) => {
+      const state = ctx.getState()
+      ctx.patchState({ authors: [...state.authors, response] })
+    })
+  }
+
+  @Action(UpdateAuthor)
+  updateAuthor (ctx: StateContext<AuthorStateModel>, action: UpdateAuthor) {
+    return this.authorService.update(action.payload.id, action.payload )
+      .subscribe( (response) => {
+        const state = ctx.getState()
+      ctx.patchState({ authors: state.authors.map(
+        author => author.id !== action.payload.id ? author: response )})
+    })
   }
 
 }
