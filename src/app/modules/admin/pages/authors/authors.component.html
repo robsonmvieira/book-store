@@ -1,5 +1,4 @@
 <app-home-admin>
-  <p> sou o authors</p>
   <div class="wapper">
     <div class="top-description">
       <div class="descriptions">
@@ -34,6 +33,9 @@
         <div class="publisher">
           <span>Livros cadastrados</span>
         </div>
+        <div class="publisher">
+          <span><img src="../../../../../assets/icons/hammer.svg" alt="" srcset=""></span>
+        </div>
       </div>
 
       <div class="content--body">
@@ -47,6 +49,18 @@
              </span>
              <span>
                {{ author.books?.length ?  author.books.length : 0 }}
+             </span>
+             <span>
+              <img src="../../../../../assets/icons/edit-button.svg"
+              alt="edit button icon"
+              style="margin-right: 10px; cursor: pointer;"
+              (click)="goToEdit(author.id)"
+              >
+              <img
+              src="../../../../../assets/icons/details.svg"
+              alt="detail button icon"
+              style="cursor: pointer;"
+              (click)="goToDetail(author.id)">
              </span>
             </li>
         </ul>

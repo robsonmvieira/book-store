@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
@@ -8,6 +9,8 @@ import { AuthorFormComponent } from 'src/app/modules/author/author-form/author-f
 import { Author } from 'src/app/modules/author/author.model';
 import { AuthorState } from 'src/app/state/authors/state';
 import { GetAllAuthors } from 'src/app/state/authors/actions';
+import { Router } from '@angular/router';
+import { Publisher } from 'src/app/modules/publisher/publisher.model';
 
 @Component({
   selector: 'app-authors',
@@ -27,11 +30,17 @@ export class AuthorsComponent implements OnInit, AfterViewInit {
   @Select(AuthorState.authorsListSize)
   authorCount$: Observable<number>
 
+  selectedAuthorToEdit: Author;
+
   isNewAuthor = null
 
   @ViewChild(AuthorFormComponent, { static: false }) modal: AuthorFormComponent;
 
-  constructor(private store: Store) { }
+  constructor(
+    private store: Store,
+    private router: Router,
+    private toastrService: ToastrService
+    ) { }
 
   ngOnInit(): void {
 
@@ -51,9 +60,35 @@ export class AuthorsComponent implements OnInit, AfterViewInit {
     }
   }
 
-
   openModal() {
     this.modal.openModalFormResource()
   }
+
+  goToEdit(id: string): void {
+    const selectedAuthor = this.setAuthorToEdit(id)
+
+    if (selectedAuthor) {
+      this.modal.openModalFormResource(selectedAuthor)
+    } else {
+      this.toastrService.error('Um erro Interno aconteceu. Tente mais tarde', 'error interno ', {
+        closeButton: true,
+        timeOut: 3000,
+      })
+    }
+  }
+
+  goToDetail(id: string): void {
+    this.router.navigate(['admin','autores', id])
+  }
+
+  private setAuthorToEdit(id: string): Author {
+
+    this.authors$.subscribe(arr => {
+      this.selectedAuthorToEdit = arr.find(a => a.id === id)
+    })
+    return this.selectedAuthorToEdit
+  }
+
+
 
 }
