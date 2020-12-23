@@ -1,6 +1,6 @@
 <ng-template #longContent let-modal>
   <div class="modal-header">
-    <h4 class="modal-title">Novo Modal do author</h4>
+    <h4 class="modal-title">{{ titleFom }}</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -29,11 +29,14 @@
         </div>
       </div>
       <div class="row d-flex justify-content-end mt-5 pr-4">
-        <button type="submit" class="btn btn-primary" (click)="submitForm()" >Cadastrar</button>
+        <button type="submit"
+          class="btn btn-primary"
+          [disabled]="authorFom.invalid"
+         (click)="submitForm()" >{{ btnAction }}</button>
       </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-light"  (click)="modal.close('Close click')">Close</button>
   </div>
 </ng-template>
