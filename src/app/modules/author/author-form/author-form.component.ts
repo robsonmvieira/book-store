@@ -30,6 +30,7 @@ export class AuthorFormComponent implements OnInit {
   titleFom = ""
   btnAction = ""
   currentAction= ''
+  authorSelectdToEdit: Author
 
   hasOptionSelected: Publisher
   @ViewChild('longContent') modal: ElementRef
@@ -50,6 +51,7 @@ export class AuthorFormComponent implements OnInit {
   openModalFormResource (author?: Author) {
 
     if(author) {
+      this.authorSelectdToEdit = author
       this.setFormToEditMode()
       this.fillFormToEdit(this.authorFom, author)
       this.setPublisher(author.id)
@@ -71,11 +73,8 @@ export class AuthorFormComponent implements OnInit {
 
   submitForm () {
     const data = this.authorFom.getRawValue()
-
-    console.log(this.currentAction)
     if (this.currentAction.includes('createMode')) {
       this.createAuthor()
-
     }
 
     if (this.currentAction === 'editMode') {
@@ -88,10 +87,10 @@ export class AuthorFormComponent implements OnInit {
 
   private buildAuthorForm () {
     this.authorFom = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: [ '', [Validators.required, Validators.email]],
+      publisher_id: [''],
       publisher: ['' ,[Validators.required]],
-      publisher_id: ['']
+      email: [ '', [Validators.required, Validators.email]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
     })
   }
 
@@ -129,16 +128,25 @@ export class AuthorFormComponent implements OnInit {
 
     if(this.authorFom.valid) {
       this.store.dispatch( new CreateAuthor(data)).subscribe(() => {
+        this.currentAction = ''
         this.clearForm(),
         this.successMessage("Operação Realizada com sucesso")
         this.modalService.dismissAll()
+        this.store.dispatch( new GetAllAuthors())
       })
     }
   }
 
   private updateAuthor (author: EditAuthorDTO): void {
+
+   this.authorFom.patchValue({
+    publisher: this.authorSelectdToEdit.publisher,
+    publisher_id: this.authorSelectdToEdit.publisher_id
+   })
+
     if(this.authorFom.valid) {
       this.store.dispatch(new UpdateAuthor(author)).subscribe(() => {
+        this.currentAction = ''
         this.successMessage('Atualização realizada com sucesso')
       },
       () => this.errorMessage('Ocorreu um erro na Tentativa da Ação, tente mais tarde'))

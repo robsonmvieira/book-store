@@ -13,11 +13,17 @@ import { PublisherService } from '../publisher.service';
 export class PublisherFormComponent implements OnInit {
 
   publisher: Publisher
+
   publisherForm: FormGroup
+
   titleForm = ''
+
   titleBtn = ''
+
   currentAction = 1;
+
   @ViewChild('longContent', {static: false}) modal;
+
   constructor(private modalService: NgbModal,
     private fb: FormBuilder,
     private publisherService: PublisherService,

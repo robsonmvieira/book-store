@@ -31,7 +31,7 @@
       <div class="row d-flex justify-content-end mt-5 pr-4">
         <button type="submit"
           class="btn btn-primary"
-          [disabled]="authorFom.invalid"
+          [disabled]="(authorFom.invalid && currentAction ==='createMode')"
          (click)="submitForm()" >{{ btnAction }}</button>
       </div>
     </form>
@@ -39,4 +39,5 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-light"  (click)="modal.close('Close click')">Close</button>
   </div>
+  {{ authorFom.errors }}
 </ng-template>

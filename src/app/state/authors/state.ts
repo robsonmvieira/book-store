@@ -50,6 +50,7 @@ export class AuthorState {
     return this.authorService.create(action.payload).subscribe( (response) => {
       const state = ctx.getState()
       ctx.patchState({ authors: [...state.authors, response] })
+
     })
   }
 
