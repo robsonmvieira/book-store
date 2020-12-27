@@ -18,6 +18,7 @@ import { PublisherState } from './state/publishers';
 import { ComponentState } from './state/components/state';
 import { environment } from 'src/environments/environment';
 import { AuthorState } from './state/authors/state';
+import { BookState } from './state/books/state';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AuthorState } from './state/authors/state';
     NgxsModule.forRoot([
       PublisherState,
       ComponentState,
-      AuthorState
+      AuthorState,
+      BookState
     ],
     { developmentMode: !environment.production }),
     NgxsReduxDevtoolsPluginModule.forRoot()
