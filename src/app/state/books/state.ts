@@ -23,6 +23,9 @@ export class BookState {
 
   @Action(GetAllBooks)
   bookList(ctx: StateContext<BookStateModel>, action: GetAllBooks) {
-    return this.bookService.
+    return this.bookService.list().subscribe(response => {
+      const state = ctx.getState();
+      ctx.patchState({...state, books: response })
+    })
   }
 }
