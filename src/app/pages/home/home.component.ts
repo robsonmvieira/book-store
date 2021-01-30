@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('cd', { static: false }) private countdown: CountdownComponent;
   config = { leftTime: 80000 }
 
+  menuIsToggle = false
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +20,11 @@ export class HomeComponent implements OnInit {
   }
   handleEvent(e) {
     // console.log(e)
+  }
+
+  toggleMenu() {
+    this.menuIsToggle = !this.menuIsToggle;
+    console.log('ok.')
   }
 
 }

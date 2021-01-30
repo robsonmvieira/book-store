@@ -1,5 +1,5 @@
-<app-public-menu></app-public-menu>
-<!-- <div class="container"> -->
+<!-- <app-public-menu></app-public-menu>
+
   <div class="wapper">
     <div class="principal-caroussel">
       <ngb-carousel *ngIf="images">
@@ -14,19 +14,6 @@
         </ng-template>
       </ngb-carousel>
     </div>
-    <!-- <div class="side-caroussel">
-      <ngb-carousel>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img src="../../../assets/img/side-caroussel/01.jpg" alt="Random first slide">
-          </div>
-          <div class="carousel-caption">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </ng-template>
-      </ngb-carousel>
-    </div> -->
     <div class="skills">
       <div class="skill">
         <div class="img">
@@ -85,7 +72,6 @@
     <section class="offers">
       <div class="recommendeds">
         <div class='container-title'>
-          <!-- https://picsum.photos/id/${n}/2000/500 -->
           <h5 class="title">
             Recomendados para você
           </h5>
@@ -111,7 +97,7 @@
 
       <div class="best-seller-2020">
         <div class='container-title'>
-          <!-- https://picsum.photos/id/${n}/2000/500 -->
+
           <h5 class="title">
             Polulares em 2020
           </h5>
@@ -337,20 +323,97 @@
 
     </section>
 
-    <!-- <div class="flash-sale">
-      <div class='container-title'>
-        https://picsum.photos/id/${n}/2000/500
-        <h5 class="title">
-          Promoção Relâmpago
-        </h5>
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sunt atque reiciendis beatae nihil, ducimus consectetur expedita autem magnam nulla.
-        </p>
-      </div>
-      <div class="counter">
-        <countdown #cd [config]="config" (event)="handleEvent($event)"></countdown>
-      </div>
-    </div> -->
-  </div>
-<!-- </div> -->
 
+  </div>
+
+ -->
+<div class="wapper">
+
+  <div class="sidebar"[ngClass]="{'hide': menuIsToggle}">
+    <div class="user-info">
+      <div class="user-info__img">
+        <img src="https://images.pexels.com/photos/2826131/pexels-photo-2826131.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=100" alt="" class="img">
+      </div>
+      <div class="user-info__data">
+        <span class="user-info__data__name">
+          Pedro Law
+        </span>
+        <div class="span user-info__data__position">
+          Aluno
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <header class="header">
+      <div class="header-icon-menu" (click)="toggleMenu()">
+        <span [ngClass]="{'menu-collapsed': menuIsToggle}">x</span>
+      </div>
+      <div class="header-input-form">
+        <span class="form-label label">Buscar</span>
+        <input type="text" placeholder="Buscar seu livro" class="input">
+      </div>
+    </header>
+    <div class="main">
+      <div class="books">
+        <div class="card">
+          <div class="card-img">
+            <div class="img">
+              <img src="https://images.pexels.com/photos/3585088/pexels-photo-3585088.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=1260"class="img-book">
+            </div>
+          </div>
+          <div class="body">
+            <span class="card-body__book-title">
+              Ux Design
+            </span>
+            <span class="card-body__author">
+              Brad Handley
+            </span>
+            <div class="span card-body__quantity">
+              Disponibilidade: 10
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <div class="img">
+              <img src="https://images.pexels.com/photos/3184612/pexels-photo-3184612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=1260"class="img-book">
+            </div>
+          </div>
+          <div class="body">
+            <span class="card-body__book-title">
+              Ux Design
+            </span>
+            <span class="card-body__author">
+              Brad Handley
+            </span>
+            <div class="span card-body__quantity">
+              Disponibilidade: 10
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img">
+            <div class="img">
+              <img src="https://images.pexels.com/photos/3471423/pexels-photo-3471423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=1260"class="img-book">
+            </div>
+          </div>
+          <div class="body">
+            <span class="card-body__book-title">
+              Ux Design
+            </span>
+            <span class="card-body__author">
+              Brad Handley
+            </span>
+            <div class="span card-body__quantity">
+              Disponibilidade: 10
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
