@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('cd', { static: false }) private countdown: CountdownComponent;
   config = { leftTime: 80000 }
 
-  menuIsToggle = false
+  menuIsToggle = true
   constructor() { }
 
   ngOnInit(): void {
