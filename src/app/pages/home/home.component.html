@@ -343,12 +343,41 @@
         </div>
       </div>
     </div>
+
+    <ul class="list">
+      <li class="list-item">
+        <a href="" class="list-link">
+          Buscar
+        </a>
+        <img src="../../../assets/icons/arrow-right.svg" class="icon">
+      </li>
+      <li class="list-item">
+        <a href="" class="list-link">
+          Categoria
+      </a>
+      <img src="../../../assets/icons/arrow-right.svg" class="icon">
+    </li>
+      <li class="list-item">
+        <a href="" class="list-link">
+          Mais lidos
+      </a>
+      <img src="../../../assets/icons/arrow-right.svg" class="icon">
+    </li>
+      <li class="list-item">
+        <a href="" class="list-link">
+          Já lidos
+      </a>
+      <img src="../../../assets/icons/arrow-right.svg" class="icon">
+    </li>
+    </ul>
   </div>
 
   <div class="content">
     <header class="header">
       <div class="header-icon-menu" (click)="toggleMenu()">
-        <span [ngClass]="{'menu-collapsed': menuIsToggle}">x</span>
+        <span [ngClass]="{'menu-collapsed': menuIsToggle}">
+          <img src="../../../assets/icons/close.svg">
+        </span>
       </div>
       <div class="header-input-form">
         <span class="form-label label">Buscar</span>
