@@ -27,7 +27,7 @@ import { BookState } from './state/books/state';
     ContactComponent,
     LoginComponent,
     SignupComponent,
-    AboutComponent
+    AboutComponent,
   ],
   imports: [
     BrowserAnimationsModule,
