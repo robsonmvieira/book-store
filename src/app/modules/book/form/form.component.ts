@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  bookForm: FormGroup
+  titleForm: string
+  titleBtn: string
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  submitForm() {}
 
 }
