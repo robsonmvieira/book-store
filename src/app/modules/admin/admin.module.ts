@@ -9,6 +9,7 @@ import { BooksComponent } from './pages/books/books.component';
 import { ComponentService } from '../shared/services/component.service';
 import { PublishersComponent } from './pages/publishers/publishers.component';
 import { PublisherModule } from '../publisher/publisher.module';
+import { BookModule } from '../book/book.module';
 
 @NgModule({
   declarations: [HomeComponent, AuthorsComponent, BooksComponent, PublishersComponent],
@@ -17,7 +18,8 @@ import { PublisherModule } from '../publisher/publisher.module';
     SharedModule,
     AdminRoutingModule,
     PublisherModule,
-    AuthorModule
+    AuthorModule,
+    BookModule
   ],
   providers: [ComponentService]
 })
