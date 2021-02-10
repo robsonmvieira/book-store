@@ -1,12 +1,11 @@
 <ng-template #longContent let-modal>
   <div class="modal-header">
-    <h4 class="modal-title">Editora</h4>
+    <h4 class="modal-title">{{ titleForm }}</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <h1>{{ titleForm }}</h1>
     <div class="container">
       <form [formGroup]="bookForm">
         <div class="form-row">
@@ -22,57 +21,58 @@
             <label for="exampleInputPassword1">Páginas:</label>
             <input type="text"
             class="form-control"
-            placeholder="Web site"
-            formControlName="web_site">
+            placeholder="Páginas"
+            formControlName="pages">
           </div>
           <div class="col">
             <label for="exampleInputPassword1">ISBN 10:</label>
             <input type="text"
             class="form-control"
-            placeholder="E-mail"
-            formControlName="email">
+            placeholder="ISBN 10"
+            formControlName="isbn_10">
           </div>
           <div class="col">
             <label for="exampleInputPassword1">ISBN 13:</label>
             <input type="text"
             class="form-control"
-            placeholder="E-mail"
-            formControlName="email">
+            placeholder="ISBN 13"
+            formControlName="isbn_13">
           </div>
 
           <div class="col">
             <label for="exampleInputPassword1">Editora:</label>
             <input type="text"
             class="form-control"
-            placeholder="E-mail"
-            formControlName="email">
+            placeholder="Editora"
+            formControlName="publisher">
           </div>
 
           <div class="col">
             <label for="exampleInputPassword1">Imagem:</label>
             <input type="text"
             class="form-control"
-            placeholder="E-mail"
-            formControlName="email">
+            placeholder="upload da imagem"
+            formControlName="image">
           </div>
           <div class="col">
             <label for="exampleInputPassword1">Autor(a)(res/ras):</label>
             <input type="text"
             class="form-control"
-            placeholder="E-mail"
-            formControlName="email">
+            placeholder="Autores"
+            formControlName="authors">
           </div>
         </div>
 
-        <div class="form-group row d-flex flex-row-reverse mt-3">
-          <button type="submit"
-          class="btn btn-primary"
-          (click)="submitForm()">{{ titleBtn }}</button>
-        </div>
+
       </form>
     </div>
   </div>
   <div class="modal-footer">
+    <div class="form-group row d-flex flex-row-reverse mt-3">
+      <button type="submit"
+      class="btn btn-primary"
+      (click)="submitForm()">{{ titleBtn }}</button>
+    </div>
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fechar</button>
   </div>
 </ng-template>

@@ -10,7 +10,6 @@ import { Author } from 'src/app/modules/author/author.model';
 import { AuthorState } from 'src/app/state/authors/state';
 import { GetAllAuthors } from 'src/app/state/authors/actions';
 import { Router } from '@angular/router';
-import { Publisher } from 'src/app/modules/publisher/publisher.model';
 
 @Component({
   selector: 'app-authors',
