@@ -8,60 +8,68 @@
   <div class="modal-body">
     <div class="container">
       <form [formGroup]="bookForm">
-        <div class="form-row">
-          <label for="exampleInputEmail1">Nome:</label>
-          <input type="text" class="form-control"
-          aria-describedby="emailHelp"
-          placeholder="Nome do livro"
-          formControlName="name">
+        <div class="form-row mt-4">
+          <div class="form-group col-md-12">
+            <label for="exampleInputEmail1">Nome:</label>
+            <input type="text" class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Nome do livro"
+            formControlName="name">
+          </div>
         </div>
 
         <div class="form-row mt-4 mb-4">
-          <div class="col">
+          <div class="form-group col-md-4">
             <label for="exampleInputPassword1">Páginas:</label>
             <input type="text"
             class="form-control"
             placeholder="Páginas"
             formControlName="pages">
           </div>
-          <div class="col">
+          <div class="form-group col-md-4">
             <label for="exampleInputPassword1">ISBN 10:</label>
             <input type="text"
             class="form-control"
             placeholder="ISBN 10"
             formControlName="isbn_10">
           </div>
-          <div class="col">
+          <div class="form-group col-md-4">
             <label for="exampleInputPassword1">ISBN 13:</label>
             <input type="text"
             class="form-control"
             placeholder="ISBN 13"
             formControlName="isbn_13">
           </div>
+        </div>
 
-          <div class="col">
+        <div class="form-row">
+          <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Editora:</label>
-            <input type="text"
-            class="form-control"
-            placeholder="Editora"
-            formControlName="publisher">
+            <select id="inputState" class="form-control" formControlName="publisher">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+
           </div>
 
-          <div class="col">
-            <label for="exampleInputPassword1">Imagem:</label>
-            <input type="text"
-            class="form-control"
-            placeholder="upload da imagem"
-            formControlName="image">
-          </div>
-          <div class="col">
+          <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Autor(a)(res/ras):</label>
-            <input type="text"
-            class="form-control"
-            placeholder="Autores"
-            formControlName="authors">
+            <select id="inputState" class="form-control" formControlName="authors">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
           </div>
         </div>
+
+          <div class="custom-file mt-3">
+            <!-- <label for="exampleInputPassword1">Imagem:</label> -->
+            <input type="file"
+            class="custom-file-input"
+            placeholder="upload da imagem"
+            formControlName="image">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+
 
 
       </form>
