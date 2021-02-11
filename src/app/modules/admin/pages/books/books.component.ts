@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { FormComponent } from 'src/app/modules/book/form/form.component';
+import { BookState } from 'src/app/state/books/state';
 import { SetSelectedOption } from 'src/app/state/components/addNewResource';
 import { ComponentState } from 'src/app/state/components/state';
 
@@ -13,6 +14,9 @@ import { ComponentState } from 'src/app/state/components/state';
 export class BooksComponent implements OnInit, AfterViewInit {
   @Select(ComponentState.selectedOption)
   valueEmitedByMenu: Observable<string>
+
+  @Select(BookState.bookListSize)
+  booksLength$: Observable<number>
 
   isNewBook = null
 
