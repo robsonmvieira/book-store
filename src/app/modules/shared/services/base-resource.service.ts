@@ -13,8 +13,6 @@ export abstract class BaseResourceService<T extends Base> {
     protected entityFromJsonFn: (json: any) => T) {
     this.httpClient = injector.get(HttpClient)
   }
-  //   this.baseUrl = `${environment.url}${this.apiPath}`
-
 
   create (data: T): Observable<T> {
     return this.httpClient.post(this.apiPath, data).pipe(
@@ -39,7 +37,7 @@ export abstract class BaseResourceService<T extends Base> {
     )
   }
 
-  update (id: string, data: T): Observable<T> {
+  update (id: string, data: any): Observable<T> {
     const url = `${this.apiPath}/${id}`
 
     return this.httpClient.put<T>(url, data).pipe(
