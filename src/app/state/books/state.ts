@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Action, Selector, State, StateContext } from "@ngxs/store";
 import { Book } from "src/app/modules/book/book.model";
 import { BookService } from "src/app/modules/book/book.service";
-import { GetAllBooks } from "./actions";
+import { CreateBook, GetAllBooks } from "./actions";
 
 export interface BookStateModel {
   books: Book[]
@@ -38,4 +38,13 @@ export class BookState {
       ctx.patchState({...state, books: response })
     })
   }
+
+  @Action(CreateBook)
+  addBook(ctx: StateContext<BookStateModel>, action: CreateBook) {
+    return this.bookService.create(action.payload).subscribe(response => {
+      const state = ctx.getState();
+      ctx.patchState({books: [...state.books, response]})
+    })
+  }
+
 }
