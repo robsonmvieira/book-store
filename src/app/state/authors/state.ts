@@ -19,7 +19,7 @@ export interface AuthorStateModel {
 @Injectable()
 export class AuthorState {
 
-  constructor(private authorService: AuthorService, private store: Store){}
+  constructor(private authorService: AuthorService) {}
 
   @Selector()
   static allAuthors(ctx: AuthorStateModel) {
