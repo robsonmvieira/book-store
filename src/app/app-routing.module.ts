@@ -5,40 +5,41 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { routes as appRoutes } from './infra/config/app.routes'
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent
   },
   {
-    path: 'contato', component: ContactComponent
+    path: appRoutes.contact, component: ContactComponent
   },
   {
-    path: 'login',
+    path: appRoutes.login,
     component: LoginComponent
   },
   {
-    path: 'register',
+    path: appRoutes.register,
     component: SignupComponent
   },
   {
-    path: 'sobre',
+    path: appRoutes.about,
     component: AboutComponent
   },
   {
-    path: 'admin',
+    path: appRoutes.admin.root,
     loadChildren: () => import('./modules/admin/admin.module').then(a => a.AdminModule)
   },
   {
-    path: 'admin/editoras',
+    path: appRoutes.publisher.root,
     loadChildren: () =>import('./modules/publisher/publisher.module').then(e => e.PublisherModule)
   },
   {
-    path: 'admin/autores',
+    path: appRoutes.authors.root,
     loadChildren: () =>import('./modules/author/author.module').then(a => a.AuthorModule)
   },
   {
-    path: 'admin/livros',
+    path: appRoutes.books.root,
     loadChildren: () =>import('./modules/book/book.module').then(a => a.BookModule)
   }
 

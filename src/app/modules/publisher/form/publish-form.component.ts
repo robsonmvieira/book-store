@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
+import { CreatePublisher, UpdatePublisher } from 'src/app/state/publishers/actions';
 import { Publisher } from '../publisher.model';
-import { PublisherService } from '../publisher.service';
 
 @Component({
   selector: 'app-form-publisher',
@@ -26,8 +27,8 @@ export class PublisherFormComponent implements OnInit {
 
   constructor(private modalService: NgbModal,
     private fb: FormBuilder,
-    private publisherService: PublisherService,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService,
+    private store: Store) { }
 
   ngOnInit(): void {
     this.publisherFormBuilder()
@@ -85,8 +86,8 @@ export class PublisherFormComponent implements OnInit {
   }
 
   private updatePublisher (): void {
-    const publisher = Object.assign({}, this.publisherForm.getRawValue(), {id: this.publisher.id})
-    this.publisherService.update(publisher.id, publisher).subscribe(() => {
+    const publisher = Object.assign({}, this.publisherForm.getRawValue())
+    this.store.dispatch( new UpdatePublisher(this.publisher.id, publisher)).subscribe( () => {
       this.successMessage('Atualização realizada com sucesso"')
       this.clearForm()
       this.modalService.dismissAll()
@@ -95,18 +96,18 @@ export class PublisherFormComponent implements OnInit {
       this.errorMessage('Ocorreu um erro ao tentar atualizar. Tente novamente mais tarde')
       this.modalService.dismissAll()
       this.clearForm()
-    }
-    )
+    })
   }
 
   private createPublisher () {
-    const data = this.publisherForm.getRawValue()
-    this.publisherService.create(data).subscribe(() => {
+    const data: Publisher = this.publisherForm.getRawValue()
+    debugger
+    this.store.dispatch(new CreatePublisher(data)).subscribe(() => {
       this.successMessage('Nova editora adicionada com sucesso!')
       this.clearForm()
       this.modalService.dismissAll()
     },
-    () =>{
+    () => {
       this.errorMessage('não foi possível criar a nova editora. Tente novamente mais tarde')
       this.clearForm()
       this.modalService.dismissAll()
